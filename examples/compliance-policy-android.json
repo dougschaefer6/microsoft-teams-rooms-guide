@@ -1,0 +1,32 @@
+{
+  "@odata.type": "#microsoft.graph.aospDeviceOwnerCompliancePolicy",
+  "displayName": "MTR-Android-AOSP-Compliance",
+  "description": "Compliance policy for Microsoft Teams Rooms on Android (AOSP)",
+  "version": 1,
+  "securityBlockJailbrokenDevices": true,
+  "osMinimumVersion": "10.0",
+  "osMaximumVersion": null,
+  "minAndroidSecurityPatchLevel": null,
+  "storageRequireEncryption": true,
+  "passwordRequired": false,
+  "passwordMinimumLength": null,
+  "passwordRequiredType": "deviceDefault",
+  "passwordMinutesOfInactivityBeforeLock": null,
+  "passwordExpirationDays": null,
+  "passwordPreviousPasswordBlockCount": null,
+  "scheduledActionsForRule": [
+    {
+      "@odata.type": "microsoft.graph.deviceComplianceScheduledActionForRule",
+      "ruleName": "DeviceNonComplianceRule",
+      "scheduledActionConfigurations": [
+        {
+          "@odata.type": "microsoft.graph.deviceComplianceActionItem",
+          "gracePeriodHours": 0,
+          "actionType": "block",
+          "notificationTemplateId": "",
+          "notificationMessageCCList": []
+        }
+      ]
+    }
+  ]
+}

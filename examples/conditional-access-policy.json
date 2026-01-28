@@ -1,0 +1,52 @@
+{
+  "@odata.type": "#microsoft.graph.conditionalAccessPolicy",
+  "displayName": "MTR-Access-Policy",
+  "description": "Conditional Access policy for Microsoft Teams Rooms devices. Requires compliant device, extends sign-in frequency.",
+  "state": "enabled",
+  "conditions": {
+    "users": {
+      "includeUsers": [],
+      "excludeUsers": [],
+      "includeGroups": [
+        "GROUP_ID_FOR_MTR_RESOURCE_ACCOUNTS"
+      ],
+      "excludeGroups": [],
+      "includeRoles": [],
+      "excludeRoles": []
+    },
+    "applications": {
+      "includeApplications": [
+        "All"
+      ],
+      "excludeApplications": [],
+      "includeUserActions": []
+    },
+    "clientAppTypes": [
+      "all"
+    ],
+    "platforms": null,
+    "locations": null,
+    "signInRiskLevels": [],
+    "userRiskLevels": [],
+    "devices": null
+  },
+  "grantControls": {
+    "operator": "OR",
+    "builtInControls": [
+      "compliantDevice",
+      "approvedApplication"
+    ],
+    "customAuthenticationFactors": [],
+    "termsOfUse": []
+  },
+  "sessionControls": {
+    "signInFrequency": {
+      "value": 90,
+      "type": "days",
+      "isEnabled": true
+    },
+    "persistentBrowser": null,
+    "applicationEnforcedRestrictions": null,
+    "cloudAppSecurity": null
+  }
+}

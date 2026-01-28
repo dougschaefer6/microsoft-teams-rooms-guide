@@ -1,0 +1,6 @@
+DisplayName,UserPrincipalName,Password,UsageLocation,Building,Floor,Capacity
+HQ-Conference-Room-101,mtr-hq-101@contoso.com,,US,Headquarters,1,10
+HQ-Conference-Room-102,mtr-hq-102@contoso.com,,US,Headquarters,1,6
+HQ-Boardroom-200,mtr-hq-200@contoso.com,,US,Headquarters,2,20
+HQ-Huddle-103,mtr-hq-103@contoso.com,,US,Headquarters,1,4
+Branch-Conference-301,mtr-branch-301@contoso.com,,US,Branch Office,3,8

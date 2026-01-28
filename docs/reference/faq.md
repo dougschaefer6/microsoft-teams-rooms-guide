@@ -1,0 +1,287 @@
+# Frequently Asked Questions
+
+## General Questions
+
+### What is Microsoft Teams Rooms?
+
+Microsoft Teams Rooms (MTR) is a complete meeting solution that brings the Teams experience to conference rooms. It consists of certified hardware running dedicated software optimized for meeting room scenarios.
+
+### What's the difference between Teams Rooms on Windows and Android?
+
+**Windows MTR:**
+- More advanced features (Front Row, content camera, intelligent speakers)
+- Higher compute requirements and cost
+- Managed via Intune with Autopilot support
+- More peripheral options
+
+**Android MTR:**
+- Lower cost entry point
+- All-in-one form factors available
+- Simpler deployment
+- Managed via vendor platforms or Intune AOSP
+
+### Do I need Teams Rooms Pro or Basic?
+
+**Choose Basic if:**
+- You have 25 or fewer rooms
+- You don't need advanced monitoring
+- Budget is primary concern
+- Basic management is sufficient
+
+**Choose Pro if:**
+- You have more than 25 rooms
+- You need remote management and monitoring
+- You want advanced analytics
+- You need professional support
+
+## Licensing Questions
+
+### What license does the room resource account need?
+
+Each Teams Rooms device needs either:
+- Microsoft Teams Rooms Pro (full features)
+- Microsoft Teams Rooms Basic (limited, max 25 per tenant)
+
+The license is assigned to the resource account, not the device.
+
+### Does each room need its own license?
+
+Yes, each resource account (room) requires its own Teams Rooms license. One license per room.
+
+### Can I use a regular Microsoft 365 license for Teams Rooms?
+
+No. Regular user licenses (E3, E5, Business) are not supported for Teams Rooms. You must use the dedicated Teams Rooms Pro or Basic license.
+
+### Do Teams Panels need separate licenses?
+
+Teams Panels can use a Shared Device license or share the license with a paired Teams Room. Check current licensing guidance as this may change.
+
+## Account Questions
+
+### Why do I need a resource account?
+
+The resource account:
+- Represents the room in Exchange (for calendar)
+- Provides identity for Teams sign-in
+- Shows the room's availability
+- Enables meeting invitations
+
+### Should the password expire on resource accounts?
+
+No. Set passwords to never expire for resource accounts. Interactive password change is not possible on MTR devices.
+
+### Can I use synced AD accounts for MTR?
+
+Cloud-only accounts are recommended. Synced accounts can work but may have complications with password management and authentication.
+
+### How do I change the resource account password?
+
+1. Reset password in Entra ID or Microsoft 365 Admin Center
+2. Update password on the device settings
+3. Verify sign-in works
+
+## Security Questions
+
+### Why can't I require MFA for Teams Rooms?
+
+MTR devices operate as unattended kiosks. They cannot:
+- Display MFA prompts
+- Accept push notifications
+- Enter verification codes
+
+Use device compliance and trusted locations instead.
+
+### Is Teams Rooms secure without MFA?
+
+Yes, when properly configured:
+- Device compliance ensures managed device
+- Trusted locations restrict where sign-in works
+- Passwords are strong and non-expiring
+- Conditional Access controls access
+
+### Should I enable BitLocker on Windows MTR?
+
+Yes. BitLocker protects data if the device is stolen. It's supported and recommended for compliance policies.
+
+### Can I install antivirus on MTR?
+
+Windows MTR includes Microsoft Defender by default. It's recommended to keep it enabled. Third-party antivirus may cause compatibility issues.
+
+## Deployment Questions
+
+### How do I deploy Teams Rooms at scale?
+
+For Windows MTR:
+1. Use Windows Autopilot with self-deploying mode
+2. Configure Autologin for automatic sign-in
+3. Pre-register devices with vendors
+4. Use dynamic groups for consistent policy application
+
+### What's the best deployment method?
+
+**Recommended:** Autopilot + Autologin (Windows)
+- Zero-touch deployment
+- Consistent configuration
+- Scalable
+- No manual device setup needed
+
+### How long does deployment take per device?
+
+| Method | Time |
+|--------|------|
+| Autopilot + Autologin | 25-45 minutes |
+| Manual deployment | 45-90 minutes |
+
+### Do I need to be on-site to deploy?
+
+With Autopilot: No. Device configures itself.
+With manual: Yes, someone needs to complete setup.
+
+## Network Questions
+
+### What ports does Teams Rooms need?
+
+Essential ports:
+- TCP 80, 443 (HTTP/HTTPS)
+- UDP 3478-3481 (STUN/TURN)
+- UDP 50000-59999 (media - preferred)
+
+### Should MTR devices use wired or wireless?
+
+**Wired (recommended):**
+- More reliable
+- Consistent bandwidth
+- Required for PoE devices
+
+**Wireless:**
+- Use only if wired not possible
+- 5 GHz / Wi-Fi 6 preferred
+- Ensure strong signal
+
+### Do I need a separate VLAN for MTR?
+
+Recommended but not required. Benefits:
+- QoS policy application
+- Security isolation
+- Easier troubleshooting
+- Traffic monitoring
+
+## Management Questions
+
+### How do I manage Teams Rooms devices?
+
+| Tool | Purpose |
+|------|---------|
+| Teams Admin Center | Device inventory, basic health, actions |
+| Pro Management Portal | Advanced monitoring, incidents, analytics |
+| Intune | Compliance, configuration, enrollment |
+| Vendor portals | Firmware, vendor-specific features |
+
+### How do I update Teams Rooms software?
+
+Updates are automatic by default. You can:
+- Let devices auto-update
+- Control via update rings (Intune)
+- Manually push via TAC
+- Configure maintenance windows
+
+### How often do devices need maintenance?
+
+| Task | Frequency |
+|------|-----------|
+| Health check | Daily |
+| Review updates | Weekly |
+| Physical cleaning | Monthly |
+| Restart | Monthly (or as needed) |
+
+### Can I remotely restart a device?
+
+Yes, via:
+- Teams Admin Center (Actions > Restart)
+- Pro Management Portal
+- Intune (device actions)
+
+## Troubleshooting Questions
+
+### The room shows as offline - what do I do?
+
+1. Check physical network connection
+2. Verify device is powered on
+3. Check if signed in (look at room display)
+4. Verify network/firewall allows traffic
+5. Restart device
+
+### Calendar isn't showing meetings - why?
+
+Check:
+1. Resource account is signed in
+2. Exchange connectivity working
+3. Calendar processing settings correct
+4. Meetings are on the room calendar
+5. Time zone configured correctly
+
+### Audio/video isn't working in meetings
+
+1. Check peripheral connections
+2. Verify correct device selected in settings
+3. Test peripherals (audio test in settings)
+4. Update firmware
+5. Try different USB ports
+
+### Device won't sign in
+
+Check:
+1. Correct credentials
+2. Account enabled in Entra ID
+3. Password not expired
+4. Conditional Access not blocking
+5. MFA not required
+
+## Feature Questions
+
+### Can Teams Rooms join non-Teams meetings?
+
+Yes, via Direct Guest Join:
+- Zoom meetings
+- Cisco Webex meetings
+- Other supported platforms
+
+### Does Teams Rooms support PSTN calling?
+
+Yes, with additional licensing:
+- Phone System license
+- Calling Plan or Direct Routing
+- Configured on resource account
+
+### Can I customize the room display?
+
+Yes:
+- Custom backgrounds
+- Themes
+- Company branding
+- Display layouts
+
+### Does Teams Rooms support whiteboarding?
+
+Yes:
+- Microsoft Whiteboard integrated
+- Interactive on touch displays
+- Share to meeting participants
+
+## Getting Help
+
+### Where do I get support?
+
+| Issue Type | Contact |
+|------------|---------|
+| Microsoft service | Microsoft 365 support ticket |
+| Hardware | Device vendor support |
+| Licensing | Microsoft partner or account team |
+| Community help | Microsoft Tech Community |
+
+### Where can I report issues?
+
+- Microsoft 365 Admin Center support
+- Microsoft Tech Community forums
+- Feedback Hub (on Windows devices)
+- Vendor support channels
