@@ -39,13 +39,14 @@ Teams Rooms Pro is the full-featured license for enterprise deployments.
 Teams Rooms Basic is a limited free license intended for evaluation and proof-of-concept scenarios only. It is not designed for production use and lacks the management, monitoring, and security features that production environments require.
 
 **Included Features:**
-- Full Teams meeting experience
+- Lite Teams meeting experience
 - Audio Conferencing (dial-in)
 - Basic device management in Pro Management Portal (device inventory only — no incidents or analytics)
 - Limited to 25 devices per tenant
 
 **Limitations:**
 - Maximum 25 rooms per tenant
+- **Same Tenant Calls Only**
 - No incident detection or analytics in PMP
 - No proactive alerting
 - No Teams Phone Standard (no PSTN calling)
