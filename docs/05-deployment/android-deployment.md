@@ -181,6 +181,85 @@ For modular systems with additional peripherals:
 3. Configure via Neat Pad or web portal
 4. Optional: Connect to Neat Pulse for management
 
+### Cisco Room Series
+
+Cisco Room Series devices (Room Bar, Room Bar Pro, Room Kit EQ, Room Kit Pro, Board Pro, Codec Pro) run RoomOS with Teams mode enabled — a fundamentally different architecture than other Android MTR vendors.
+
+1. **Initial hardware setup**
+   - Connect display(s) via HDMI, Ethernet for network, and power
+   - Connect Cisco peripherals (Cisco Navigator touch panel, cameras, microphones)
+   - Device boots into RoomOS setup wizard
+
+2. **Register device to Cisco Control Hub**
+   - Claim device in Control Hub using activation code or serial number
+   - Device downloads its RoomOS configuration and firmware from Cisco cloud
+   - Configure workspace assignment and device name in Control Hub
+
+3. **Enable Microsoft Teams mode**
+   - In Control Hub, navigate to the device and set the calling platform to Microsoft Teams
+   - Device downloads the Teams Rooms application and restarts
+   - RoomOS continues to manage the device layer (display, cameras, peripherals, network) while Teams handles the meeting experience
+
+4. **Sign in with Teams resource account**
+   - Enter resource account UPN and password on the touch panel or front-of-room display
+   - Calendar syncs and room name appears
+   - Device registers in Teams Admin Center as an Android MTR device
+
+5. **Post-registration management**
+   - **Control Hub** manages: RoomOS firmware, device configuration, peripheral settings, xAPI access, diagnostics
+   - **Teams Admin Center / Intune** manages: Teams app updates, compliance policies, meeting settings
+   - Both portals are required for complete lifecycle management
+
+## Cisco Room Series Considerations
+
+Cisco Room Series occupies a unique position in the Android MTR ecosystem. While most Android MTR devices (Poly, Logitech, Yealink, Neat) target small-to-medium rooms, Cisco is the only Android MTR vendor with devices certified for large and extra-large meeting spaces.
+
+### Large and Extra-Large Room Support
+
+Cisco is the only Android MTR platform certified for rooms beyond the typical small/medium form factor:
+
+- **Room Kit EQ** — Supports large boardrooms (14-20 people) with multiple Cisco Quad Camera or PTZ 4K cameras, Cisco Table Microphone Pro arrays, and dual displays
+- **Room Kit Pro / Codec Pro** — Supports extra-large spaces (20+ people) including training rooms and all-hands spaces, with up to three screens and extensive peripheral connectivity
+- **Room 70 Panorama** — Purpose-built for extra-large executive boardrooms with dual 70" integrated displays and panoramic video
+
+All other Android MTR vendors max out at medium conference rooms (8-14 people at most).
+
+### Divisible Room Support
+
+Cisco Room Kit EQ supports Room Divider functionality — a feature unique among Android MTR platforms. When a physical divider splits a large room into two smaller rooms, the system automatically reconfigures cameras, microphones, and displays to operate as two independent meeting rooms or recombines them into a single space. This typically requires third-party control system integration (Crestron, Q-SYS) on Windows MTR, but Cisco handles it natively in RoomOS.
+
+### Third-Party Control System Integration
+
+Cisco devices expose the xAPI interface on RoomOS, enabling integration with third-party control systems (Crestron, Q-SYS, Extron). This allows:
+
+- Room automation triggered by meeting state (lights, blinds, displays)
+- Custom touch panel interfaces overlaying Teams functionality
+- Integration with building management systems
+- Macro-based room behavior customization
+
+No other Android MTR platform offers this level of third-party programmability.
+
+### Dual Management Model
+
+Cisco devices require management through two planes:
+
+| Management Layer | Tool | Scope |
+|-----------------|------|-------|
+| Device / RoomOS | Cisco Control Hub | Firmware, device config, peripherals, xAPI, diagnostics, workspace analytics |
+| Teams Application | Teams Admin Center / Intune | Teams app updates, compliance, meeting policies, resource account |
+
+This dual-management model means IT teams need familiarity with both Cisco Control Hub and Microsoft management tools. For organizations already running Cisco collaboration infrastructure (CUCM, Webex, Expressway), Control Hub is likely already in use.
+
+### Peripheral Ecosystem
+
+Cisco devices use purpose-built peripherals designed for large spaces — these are not available on other Android MTR platforms:
+
+- **Cisco Quad Camera** — Speaker-tracking camera system with four lenses and integrated speaker detection
+- **Cisco PTZ 4K** — Pan-tilt-zoom camera for large rooms and auditoriums
+- **Cisco Table Microphone Pro** — Directional microphone arrays for boardroom tables
+- **Cisco Ceiling Microphone Pro** — Ceiling-mounted microphone arrays for rooms where table mics aren't practical
+- **Cisco Navigator** — 10" touch panel controller (replaces generic touch controllers)
+
 ## Post-Deployment Configuration
 
 ### Teams Admin Center (Transitioning to PMP Through 2026)

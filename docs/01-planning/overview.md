@@ -59,6 +59,8 @@ MTR on Android provides a streamlined meeting experience on certified Android-ba
 | **Autopilot Support** | Yes (with Autologin) | No |
 | **Typical Cost** | Higher | Lower |
 
+> **Note on Android MTR room size coverage:** While most Android MTR devices (Poly, Logitech, Yealink, Neat, Jabra) are designed for small-to-medium rooms, **Cisco Room Series on Android** breaks this pattern. Cisco Room Kit EQ, Room Kit Pro, Codec Pro, and Room 70 Panorama are certified for large and extra-large rooms with features typically associated with Windows MTR — multiple cameras, multiple displays, content cameras, third-party control system integration (via xAPI), and divisible room support. Organizations evaluating Android MTR should not assume it is limited to small rooms if Cisco devices are in scope.
+
 ## Related Devices
 
 ### Microsoft Teams Panels

@@ -21,7 +21,14 @@ Effective monitoring ensures Teams Rooms devices remain operational and issues a
 - **PRTG Network Monitor** — Agentless network monitoring with SNMP/WMI support
 - **Nagios/Zabbix** — Open-source monitoring platforms with broad device support
 - **ServiceNow** — ITSM platform with device monitoring and incident management
-- Vendor-specific platforms (Poly Lens, Logitech Sync, Yealink Management Cloud, Neat Pulse)
+- **Cisco Control Hub** — Cloud management portal for Cisco collaboration devices. Monitors device status, diagnostics, and call quality across the Cisco Room Series fleet. Manages firmware, configurations, and provides workspace-level analytics for devices running RoomOS with Teams mode.
+- **Crestron XiO Cloud** — Cloud-based provisioning, monitoring, and management platform for Crestron devices. Supports fleet-wide firmware deployment, remote configuration, and real-time device status across Crestron room systems, touch panels, and peripherals.
+- **Q-SYS Reflect** — Cloud monitoring and management for Q-SYS ecosystem devices. Provides real-time status, alerting, remote configuration, and firmware management for Q-SYS Cores, peripherals, and networked audio/video endpoints.
+- **Poly Lens** — Cloud management for Poly video and audio devices. Provides remote monitoring, firmware updates, configuration management, and device analytics.
+- **Logitech Sync** — Cloud portal for Logitech collaboration devices. Offers device health monitoring, room insights, software updates, and remote management capabilities.
+- **Yealink Management Cloud** — Centralized cloud platform for Yealink devices. Supports monitoring, diagnostics, firmware management, and usage analytics.
+- **Neat Pulse** — Cloud management for Neat devices. Provides device health monitoring, remote configuration, software updates, and room usage analytics.
+- **ShureCloud** — Cloud platform for Shure networked audio devices (MXA microphone arrays, IntelliMix DSPs). Monitors device status, manages firmware updates, and provides remote configuration for Shure audio endpoints commonly deployed alongside Teams Rooms.
 
 ## Key Metrics to Monitor
 
@@ -190,6 +197,53 @@ For Yealink devices:
 - Monitoring and diagnostics
 - Firmware management
 - Usage analytics
+
+### Cisco Control Hub
+
+For Cisco Room Series devices (Room Bar, Room Kit EQ, Room Kit Pro, Board Pro, etc.):
+- Real-time device status, diagnostics, and xAPI access
+- Firmware channel management (stable, preview) with staged rollout
+- Workspace configuration and room capacity analytics
+- Call quality dashboards with per-call media statistics
+- Integration with Webex cloud for hybrid deployments
+
+> **Note:** Cisco devices running Teams mode are managed at the RoomOS/device layer through Control Hub and at the Teams app layer through Teams Admin Center and Intune. Both portals are needed for complete device management.
+
+### Crestron XiO Cloud
+
+For Crestron room systems and peripherals:
+- Fleet-wide device discovery and provisioning
+- Real-time monitoring and alerting for all Crestron endpoints
+- Centralized firmware deployment and scheduling
+- Remote configuration push across device groups
+- Integration with Crestron room scheduling and control systems
+
+### Q-SYS Reflect
+
+For Q-SYS ecosystem devices:
+- Real-time status monitoring for Q-SYS Cores, peripherals, and I/O endpoints
+- Remote firmware management with staged deployment
+- Alerting and notification for device health events
+- Configuration backup and restore
+- Multi-site management with location-based device grouping
+
+### Neat Pulse
+
+For Neat devices:
+- Device health monitoring and diagnostics
+- Remote configuration and settings management
+- Software update scheduling and deployment
+- Room usage analytics and environmental sensors (air quality, humidity)
+- Multi-site fleet management with bulk operations
+
+### ShureCloud
+
+For Shure networked audio devices:
+- Real-time status monitoring for MXA microphone arrays and IntelliMix DSPs
+- Firmware update management across Shure audio endpoints
+- Remote configuration of audio processing parameters (beam steering, AEC, noise reduction)
+- Device inventory and network discovery
+- Integration with Shure Designer for audio system configuration
 
 ## Dashboard Creation
 

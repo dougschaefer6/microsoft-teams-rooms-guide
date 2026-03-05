@@ -131,19 +131,47 @@ Android-based systems are typically all-in-one or modular certified bundles:
 - Poly Studio X70 + expansion mics
 - Logitech Rally Plus system
 
-### Large/Boardroom (14+ people)
+### Large/Boardroom (14-20 people)
 
 **Recommended:**
-- MTR on Windows (more flexible)
+- MTR on Windows with professional AV integration, or Cisco Room Kit EQ (Android)
 - Multiple cameras or PTZ
 - Ceiling or table microphone arrays
 - Dual displays
 - DSP for audio processing
 
 **Example Setups:**
-- Custom AV integration with MTR compute
-- Biamp, Q-SYS, Crestron DSP integration
-- Professional installation recommended
+- Windows MTR compute + Biamp, Q-SYS, or Crestron DSP integration
+- Cisco Room Kit EQ + Cisco Quad Camera + Cisco Table Microphone Pro arrays + dual displays (Android MTR)
+- Professional installation recommended for both platforms
+
+> **Note:** Cisco Room Kit EQ is the only Android MTR platform certified for large rooms. All other Android MTR vendors (Poly, Logitech, Yealink, Neat) are limited to medium rooms and below.
+
+### Extra Large (20+ people)
+
+For auditoriums, training rooms, all-hands spaces, and executive boardrooms with 20+ seats, the device options are limited to Windows MTR with custom AV integration or Cisco Room Series on Android.
+
+**Recommended:**
+- Multiple displays (up to three screens)
+- PTZ cameras or multi-camera systems
+- Ceiling microphone arrays or distributed table microphones
+- External DSP for audio processing and room coverage
+- Professional AV integration required
+
+**Example Setups:**
+- Windows MTR compute + Q-SYS Core DSP + ceiling mic arrays + PTZ cameras
+- Cisco Codec Pro + Cisco PTZ 4K cameras + Cisco Ceiling Microphone Pro arrays (Android MTR)
+- Cisco Room 70 Panorama — dual 70" integrated displays with panoramic video (Android MTR)
+
+### Divisible Rooms
+
+Divisible rooms use a physical partition to split a large space into two or more independent meeting rooms, each requiring its own Teams Rooms session when divided and a combined session when open.
+
+**Options:**
+- **Cisco Room Kit EQ with Room Divider** (Android MTR) — native room divider support in RoomOS automatically reconfigures cameras, microphones, and displays when the partition moves. No third-party control system required for the divider logic.
+- **Windows MTR with third-party control system** — Crestron, Q-SYS, or Extron control system manages room combining logic, switching between two independent MTR computes (divided) and a single MTR compute (combined). Requires professional AV integration and programming.
+
+> **Note:** Divisible rooms are among the most complex meeting space deployments. Both approaches require careful planning around microphone zones, camera coverage per room half, display assignment, and network connectivity for multiple potential MTR sessions.
 
 ## Network Hardware Requirements
 
